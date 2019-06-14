@@ -1,9 +1,12 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
     <title>Dev skills</title>
 </head>
 <body>
@@ -19,7 +22,7 @@
                     {% if user.is_authenticated %}
                     <li>Welcome {{ user.username }} | </li>
                     <li>
-                            <a href="{% url">Logout</a>
+                            <a href="{% url 'logout'}">Logout</a>
                         </li>
                     {% else %}
                     <li>
@@ -28,6 +31,7 @@
                     <li>
                             <a href="{% url 'signup'%}">Register</a>
                         </li>
+                    {% endif %}
                     
                 </ul>
             </div>
