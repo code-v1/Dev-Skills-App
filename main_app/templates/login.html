@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content%}
+{% if error_message%}
+    <p class="red-text center">
+{% endif %}
+<h3>Please login Below</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Login" class="btn blue">
+        <input type="hidden" name="next" value="{{ next }}">
+     </form>
+
+{% endblock %}

@@ -16,15 +16,19 @@
                     </li>
                 </ul>
                 <ul class="right">
+                    {% if user.is_authenticated %}
+                    <li>Welcome {{ user.username }} | </li>
                     <li>
-                        <a href="">Login</a>
+                            <a href="{% url">Logout</a>
+                        </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login'%}">Login</a>
                     </li>
                     <li>
-                        <a href="">Logout</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'signup'%}">Register</a>
-                    </li>
+                            <a href="{% url 'signup'%}">Register</a>
+                        </li>
+                    
                 </ul>
             </div>
         </nav>
